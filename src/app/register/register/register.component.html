@@ -1,0 +1,56 @@
+<form>
+  <div class="col-md-1">
+
+  </div>
+  <div class="col-md-11">
+    <div class="row">
+      <div class="col-lg-3 col-md-6">
+          <div class="form-group m-b-15">
+            <label for="project">Name<span class="mandatory">*</span></label>
+            <input type="text" class="form-control" [(ngModel)]="students.name" name="studentname" id="studentname" required>
+            <span class="bar"></span>
+             <span *ngIf="!students.name && error" class="error-text">
+                  Name is required
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-3 col-md-6">
+            <div class="form-group m-b-15">
+              <label for="project">DOB<span class="mandatory">*</span></label>
+              <input type="text" class="form-control" [(ngModel)]="students.dob" name="dob" id="dob" required>
+              <span class="bar"></span>
+               <span *ngIf="!students.name && error" class="error-text">
+                    Name is required
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-3 col-md-6">
+              <div class="form-group m-b-15">
+                <label for="project">Address<span class="mandatory">*</span></label>
+                <input type="text" class="form-control" [(ngModel)]="students.addr" name="addr" id="addr" required>
+                <span class="bar"></span>
+                 <span *ngIf="!students.name && error" class="error-text">
+                      Name is required
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-3 col-md-6">
+                <div class="form-group m-b-15">
+                  <label for="project">Phone<span class="mandatory">*</span></label>
+                  <input type="text" class="form-control" [(ngModel)]="students.phone" name="phone" id="phone" required>
+                  <span class="bar"></span>
+                   <span *ngIf="!students.name && error" class="error-text">
+                        Name is required
+                  </span>
+                </div>
+              </div>
+            </div>
+              <button type="button" id="owaddClientBasicInfo" (click)="addStudents(students)" class="btn btn-info pull-right">Save</button>
+  </div>
+</form>
