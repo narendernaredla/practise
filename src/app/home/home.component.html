@@ -1,3 +1,28 @@
-<p>
-  home works!
-</p>
+<button type="button" id="addstds" routerLink="/register" class="btn btn-info pull-right">Add Student</button>
+<table class="display nowrap table table-bordered">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Date Of Birth</th>
+      <th>Address</th>
+      <th>Phone</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let std of stdss">
+      <td>{{std.name}}</td>
+      <td>{{std.dob|dateFormat}}</td>
+      <td>{{std.addr}}</td>
+      <td>{{std.phone}}</td>
+      <td><button type="button" id="owaddClientBasicInfo" (click)="deletestd(std)"class="btn btn-info pull-right">Delete</button>
+        <button type="button" id="owaddClientBasicInfo" routerLink="/editstd/{{std.id}}" class="btn btn-info pull-right">Edit</button></td>
+    </tr>
+    <tr *ngIf='stdss.length == 0'>
+      <td colspan="5" class="text-center">No Records</td>
+    </tr>
+  </tbody>
+  <tfoot>
+
+  </tfoot>
+</table>

@@ -1,6 +1,7 @@
 import { Routes, RouterModule } from '@angular/router';
 import { RegisterComponent } from './register/register/register.component';
-import { HomeComponent } from './home/home.component'
+import { HomeComponent } from './home/home.component';
+import { EditstudentComponent } from './editstudent/editstudent.component';
 
 const AppRoutes: Routes = [
     {
@@ -14,6 +15,10 @@ const AppRoutes: Routes = [
     {
       path: "register",
       component: RegisterComponent
+    },
+    {
+      path: "editstd/:id",
+      component: EditstudentComponent
     }
   
   ];

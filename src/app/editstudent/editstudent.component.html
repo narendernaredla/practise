@@ -1,8 +1,4 @@
-<!-- <button type="button" id="owaddClientBasicInfo" (click)="showStdForm($event)" class="btn btn-info pull-right">Add Student</button> -->
-
-<!-- <app-home (editStd)="editStdnt($event)"></app-home> -->
-
-<form  #regStd="ngForm" novalidate >
+<form  #editStd="ngForm" novalidate>
   <div class="col-md-1">
 
   </div>
@@ -11,9 +7,9 @@
       <div class="col-lg-3 col-md-6">
           <div class="form-group m-b-15">
             <label for="project">Name<span class="mandatory">*</span></label>
-            <input type="text" class="form-control" [(ngModel)]="students.name" name="studentname" id="studentname" required>
+            <input type="text" class="form-control" [(ngModel)]="editStdDetaails.name" name="studentname" id="studentname" required>
             <span class="bar"></span>
-             <span *ngIf="!students.name && error" class="error-text">
+             <span *ngIf="!editStdDetaails.name && error" class="error-text">
                   Name is required
             </span>
           </div>
@@ -23,9 +19,9 @@
         <div class="col-lg-3 col-md-6">
             <div class="form-group m-b-15">
               <label for="project">DOB<span class="mandatory">*</span></label>
-              <my-date-picker name="mydate" [options]="myDatePickerOptions" [(ngModel)]="students.dob" required></my-date-picker>
+              <my-date-picker name="mydate" [options]="myDatePickerOptions" [(ngModel)]="editStdDetaails.dob" required></my-date-picker>
               <span class="bar"></span>
-               <span *ngIf="!students.dob && error" class="error-text">
+               <span *ngIf="!editStdDetaails.dob && error" class="error-text">
                     DOB is required
               </span>
             </div>
@@ -35,9 +31,9 @@
           <div class="col-lg-3 col-md-6">
               <div class="form-group m-b-15">
                 <label for="project">Address<span class="mandatory">*</span></label>
-                <input type="text" class="form-control" [(ngModel)]="students.addr" name="addr" id="addr" required>
+                <input type="text" class="form-control" [(ngModel)]="editStdDetaails.addr" name="addr" id="addr" required>
                 <span class="bar"></span>
-                 <span *ngIf="!students.addr && error" class="error-text">
+                 <span *ngIf="!editStdDetaails.addr && error" class="error-text">
                       Address is required
                 </span>
               </div>
@@ -47,15 +43,14 @@
             <div class="col-lg-3 col-md-6">
                 <div class="form-group m-b-15">
                   <label for="project">Phone<span class="mandatory">*</span></label>
-                  <input type="text" class="form-control" [maxlength]="10" [(ngModel)]="students.phone" name="phone" id="phone" required>
+                  <input type="text" class="form-control" [(ngModel)]="editStdDetaails.phone" name="phone" id="phone" required>
                   <span class="bar"></span>
-                   <span *ngIf="!students.phone && error" class="error-text">
+                   <span *ngIf="!editStdDetaails.phone && error" class="error-text">
                         Phone is required
                   </span>
                 </div>
               </div>
             </div>
-              <button type="button" id="owaddClientBasicInfo" (click)="addStudents(regStd)" class="btn btn-info pull-right">Save</button>
+              <button type="button" id="owaddClientBasicInfo" (click)="editStudent(editStd)" class="btn btn-info pull-right">Update details</button>
   </div>
 </form>
-
